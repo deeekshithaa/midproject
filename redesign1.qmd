@@ -6,12 +6,41 @@ title: "redesign1"
 
 ## Bad Graph: Spiral Graph
 
-![Spiral Graph](path_to_bad_spiral_image)
+![Spiral Graph](spiral_image.jpg)
+![**Why the Spiral Graph is a Bad Visualization**
+
+There are many reasons why a **spiral graph** is considered a very bad choice to show complex or time-series data:
+
+1. **Visual Complexity**:
+A spiral graph tends to pack a great deal of information into a compact, non-linear format. Visually interesting, perhaps, but tough to follow, particularly for data represented over time or across multiple categories.
+The spiral has to work against itself, where the viewer has to discover the data in some convoluted path. This is particularly problematic as a means of viewing trends or changes over time since the circular nature of the spiral distorts continuity.
+
+2. **Lack of Comparability**:
+It is not easy to compare data points with a spiral graph; this is because, as you are moving outward, the distance between any two data points changes, hence showing the wrong representation of the fluctuation or trend of the data.
+This makes panels virtually impossible to compare across different variables or categories, since data points that fall close together may well be noncomparable. This then makes it hard to pick out which countries hold more deaths or if there is a consistent upward or downward trend.
+
+3. **Illusory Trends**:
+Spiral graphs often display misleading trends due to the wrapping of data into the spiral, compressing long periods of time into very tight areas near the center and stretching more recent data farther out.
+It allows viewers to incorrectly assume that data points far apart in the spiral really are different when they might be close in actual value, or vice versa.
+
+4. **Poor with Timeseries Data**:
+Times-series data are, by definition, linear because time itself is a natural and simple function. Spiral presentation of such data discredits the 'natural flow' and the audience has to work their brains for a while to trace a straight line in their minds.
+- In cases of more than one time period, the spiral graph is very cluttered and normally does not permit the viewing of an individual point or of a trend over a given period.
+]
+
 
 ## Improved Graph: Faceted Line Plot
 
-![Faceted Line Plot](path_to_facet_line_image)
+![Faceted Line Plot](redesign1_pic.jpg)
+![1. **Faceted Line Plots**
 
-### Why the Change
+**Why it good**
+*Clarity and Simplicity*: Faceted line plots display data that are in categories, such as countries, as multiple small line graphs. This method ensures the viewer focuses on each country trend separately without those coming with plotting on a single graph.
+Comparability : Data for each country is clearly separated. This makes it easy to compare throughout the trend of each country since there are no overlaps. The viewer can view the death trends of each country over time and somehow compares them side by side.
+*Trend Accuracy*: The line graph maintains continuity of time-series data, wherein trends such as increases, decreases, spikes, etc. are immediately evident and represented correctly. Unlike the spiral, it doesn't distort the data.
+*Scalability*: Faceted plots allow custom scaling, so scales = "free_y" will ensure each country's data is scaled optimally without being biased by other countries' bigger or smaller data. This can be quite relevant for countries that have different death rates; this advice would avoid visually downplaying the smaller trends.
 
-The spiral graph was hard to follow and compare between countries...
+###Why it's better than a spiral
+It steers clear of the confusion and distortion such a circular shape would create, so each trend from it is clear, linear, and non-overlapping.]
+
+
