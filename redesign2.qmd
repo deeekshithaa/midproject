@@ -1,0 +1,41 @@
+---
+title: "Redesign 2"
+---
+
+# Redesign 2: Stacked Area Chart
+
+## Bad Graph: Spiral Graph
+
+![Spiral Graph](spiral_image.jpg) 
+
+**Why the Spiral Graph is a Bad Visualization**
+
+There are many reasons why a **spiral graph** is considered a very bad choice to show complex or time-series data:
+
+1.  **Visual Complexity**: A spiral graph tends to pack a great deal of information into a compact, non-linear format. Visually interesting, perhaps, but tough to follow, particularly for data represented over time or across multiple categories. The spiral has to work against itself, where the viewer has to discover the data in some convoluted path. This is particularly problematic as a means of viewing trends or changes over time since the circular nature of the spiral distorts continuity.
+
+2.  **Lack of Comparability**: It is not easy to compare data points with a spiral graph; this is because, as you are moving outward, the distance between any two data points changes, hence showing the wrong representation of the fluctuation or trend of the data. This makes panels virtually impossible to compare across different variables or categories, since data points that fall close together may well be noncomparable. This then makes it hard to pick out which countries hold more deaths or if there is a consistent upward or downward trend.
+
+3.  **Illusory Trends**: Spiral graphs often display misleading trends due to the wrapping of data into the spiral, compressing long periods of time into very tight areas near the center and stretching more recent data farther out. It allows viewers to incorrectly assume that data points far apart in the spiral really are different when they might be close in actual value, or vice versa.
+
+4.  **Poor with Timeseries Data**: Times-series data are, by definition, linear because time itself is a natural and simple function. Spiral presentation of such data discredits the 'natural flow' and the audience has to work their brains for a while to trace a straight line in their minds.
+
+.  In cases of more than one time period, the spiral graph is very cluttered and normally does not permit the viewing of an individual point or of a trend over a given period.
+
+## Improved Graph: Stacked Area Chart
+
+![Stacked Area Chart](redesign2_pic.jpg)
+
+#Why it is good:
+
+**Cumulative View:** The stacked-area chart is great for showing the cumulative total of something, for example the total number of deaths contributed by each country overtime. It can show in one contribution and an overview of the trend in global deaths.
+
+**Proportional Visualization**: The countries each had an area, and the stack mapped the proportion of daily or cumulative deaths compared with others. This helps communicate not only the time trends but also how much each country contributes to the whole.
+
+**Trend Continuity**: In the spiral graph, time distorts the progression of the graph, while in the stacked area chart, time flow is linear, obvious, and on the x-axis. Due to this, the upward trend from the accumulation of global deaths was easier to read.
+
+**Aggregate Insights**: Faceted line plot is best suited for detailed, per country trends. On the other hand, the stacked area plot gives a higher level view. These will help to answer more general questions such as "Which countries contribute most to the global total?" or "What are the overall trends in global deaths?
+
+###Why it's better than a spiral:
+
+It provides a clear, linear representation of time, avoids visual distortion from the spiral graph, and provides an intuitive feel for how the individual contributions-countries-add up to the total. You can't get a sense for how the countries relate to each other and to the worldwide total with spirals as you can in a clean and orderly stacked area chart.
