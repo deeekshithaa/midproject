@@ -1,0 +1,17 @@
+---
+title: "redesign1"
+---
+
+# Redesign 1: Faceted Line Plot
+
+## Bad Graph: Spiral Graph
+
+![Spiral Graph](path_to_bad_spiral_image)
+
+## Improved Graph: Faceted Line Plot
+
+![Faceted Line Plot](path_to_facet_line_image)
+
+### Why the Change
+
+The spiral graph was hard to follow and compare between countries...

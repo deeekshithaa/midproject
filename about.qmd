@@ -1,0 +1,20 @@
+---
+title: "About"
+---
+
+# About Visualizations
+
+Visualizations help make complex data more understandable and accessible...
+
+[My LinkedIn](https://www.linkedin.com/in/yourprofile)
+
+[My GitHub](https://github.com/yourprofile)
+
+## Good vs. Bad Graphs
+
+-   Bad graphs often distort or confuse the message (like the spiral COVID graph).
+-   Good graphs are clear, accurate, and help in understanding the data (faceted lines, stacked charts, etc.).
+
+### Enhanced Visualizations
+
+We enhanced two bad graphs into clear and informative visuals...

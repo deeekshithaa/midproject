@@ -1,0 +1,15 @@
+---
+title: "oil_bar.qmd"
+---
+
+# Oil Production: Bar Plot
+
+![Bad Bar Plot](path_to_bad_oil_bar_image)
+
+## Improved Bar Plot
+
+![Improved Bar Plot](path_to_good_oil_bar_image)
+
+### Why the Change
+
+The original plot made it difficult to compare countries' oil production...

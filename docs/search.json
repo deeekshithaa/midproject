@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "redesign1.html",
+    "href": "redesign1.html",
+    "title": "redesign1",
+    "section": "",
+    "text": "Spiral Graph\n\n\n\n\n\n\n\n\nFaceted Line Plot\n\n\n\n\nThe spiral graph was hard to follow and compare between countries…"
+  },
+  {
+    "objectID": "redesign1.html#bad-graph-spiral-graph",
+    "href": "redesign1.html#bad-graph-spiral-graph",
+    "title": "redesign1",
+    "section": "",
+    "text": "Spiral Graph"
+  },
+  {
+    "objectID": "redesign1.html#improved-graph-faceted-line-plot",
+    "href": "redesign1.html#improved-graph-faceted-line-plot",
+    "title": "redesign1",
+    "section": "",
+    "text": "Faceted Line Plot\n\n\n\n\nThe spiral graph was hard to follow and compare between countries…"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Mid_Project",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Visualizations help make complex data more understandable and accessible…\nMy LinkedIn\nMy GitHub\n\n\n\nBad graphs often distort or confuse the message (like the spiral COVID graph).\nGood graphs are clear, accurate, and help in understanding the data (faceted lines, stacked charts, etc.).\n\n\n\nWe enhanced two bad graphs into clear and informative visuals…"
+  },
+  {
+    "objectID": "about.html#good-vs.-bad-graphs",
+    "href": "about.html#good-vs.-bad-graphs",
+    "title": "About",
+    "section": "",
+    "text": "Bad graphs often distort or confuse the message (like the spiral COVID graph).\nGood graphs are clear, accurate, and help in understanding the data (faceted lines, stacked charts, etc.).\n\n\n\nWe enhanced two bad graphs into clear and informative visuals…"
+  },
+  {
+    "objectID": "oil_bar.html",
+    "href": "oil_bar.html",
+    "title": "oil_bar.qmd",
+    "section": "",
+    "text": "Bad Bar Plot\n\n\n\n\n\n\n\nImproved Bar Plot\n\n\n\n\nThe original plot made it difficult to compare countries’ oil production…"
+  },
+  {
+    "objectID": "oil_bar.html#improved-bar-plot",
+    "href": "oil_bar.html#improved-bar-plot",
+    "title": "oil_bar.qmd",
+    "section": "",
+    "text": "Improved Bar Plot\n\n\n\n\nThe original plot made it difficult to compare countries’ oil production…"
+  }
+]
