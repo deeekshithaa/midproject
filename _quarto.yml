@@ -14,6 +14,8 @@ website:
         menu:
           - text: "Redesign 1"
             href: redesign1.qmd
+          - text: "Demo"
+            href: demo.qmd
           #- text: "Redesign 2"
           #  href: redesign2.qmd
           #- text: "Redesign 3"
