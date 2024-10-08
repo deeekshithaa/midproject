@@ -32,7 +32,7 @@ Times-series data are, by definition, linear because time itself is a natural an
 ## Improved Graph: Faceted Line Plot
 
 ![Faceted Line Plot](redesign1_pic.jpg)
-![1. **Faceted Line Plots**
+1. **Faceted Line Plots**
 
 **Why it good**
 *Clarity and Simplicity*: Faceted line plots display data that are in categories, such as countries, as multiple small line graphs. This method ensures the viewer focuses on each country trend separately without those coming with plotting on a single graph.
@@ -42,5 +42,6 @@ Comparability : Data for each country is clearly separated. This makes it easy t
 
 ###Why it's better than a spiral
 It steers clear of the confusion and distortion such a circular shape would create, so each trend from it is clear, linear, and non-overlapping.]
+
 
 
