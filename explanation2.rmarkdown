@@ -1,0 +1,146 @@
+---
+title: "Explanation of Oil Production Graphs"
+---
+
+
+
+
+
+![](oil_graph.jpg)
+
+### Why is it a bad graph? 
+
+1. **Overcrowded Information**: If it was an attempt to include too much information on or within the original graph at once, such as too many countries or highly detailed categories, the viewer gets overwhelmed and has a hard time getting certain key points with just a glance.
+
+2.  **Poor Visual Encoding**: The original graph could be encoding the data with an inappropriate or inefficient visualization, such as: Displaying 3D charts, usually distorting the true value comparisons.
+
+    Inappropriate use of color scale, through which the variation of values cannot be perceived.
+
+    This would include a failure to arrange data in a logical order that would allow for easy comparison between countries regarding oil production.
+
+3.  **Lack of Focus on Comparison**: It is not clear from the graph how the countries compare in their oil production, which is likely the most important insight to be derived from the data. If the graph isn't sorted or uses inconsistent scales, the viewer can't readily tell which countries produce the most oil.
+
+4.  **Geographical Blindness**: A chart that does not adopt geographical context because of its original nature does not present oil production on the geographic perspective. Oil production is highly related to geography, thus a lack of geographical perspective limits the insight a viewer gains from the data.
+
+# Oil Production: Bar Plot
+## Improved Bar Plot
+
+
+
+
+```{r, echo=FALSE,  message=FALSE, warning=FALSE}
+# Creating a bar plot of oil production by country
+
+library(ggplot2)
+library(plotly)
+library(readxl)
+oildataset <- read_excel("oildataset.xlsx")
+
+# Creating a bar plot of oil production by country with custom colors
+visualization1 <- ggplot(oildataset, aes(x = reorder(Country, `Oil Production (Thousand B/D)`), 
+                                         y = `Oil Production (Thousand B/D)`, fill = Group)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(title = "Oil Production by Country in 2022", x = "Country", y = "Production (Thousand B/D)") +
+  scale_fill_manual(values = c("Non-OPEC Countries" = "darkmagenta", 
+                               "OPEC Countries" = "chocolate", 
+                               "OPEC+ Countries" = "darkolivegreen4")) +  
+  theme_minimal()
+
+# Convert to interactive plot using plotly
+bar_chart <- ggplotly(visualization1)
+
+# Display the graph
+bar_chart
+```
+
+
+
+
+
+### Why do we consider bar as good graph?
+
+**Bar Chart:** Improve Readability and Comparability
+
+A **bar plot** strengthens this display by directly addressing the two most important issues, clarity and comparability
+
+**Understanding:** It summarizes the dataset into which country produces what amount of oil through a simple, read-friendly bar plot. Each country has its own bar, the length being directly proportional to the produced oil.
+
+**Sorted for Comparability:** In the following bar plot, sorting countries in a descending manner based on their oil production makes the instant comparison of which country is producing more oil. This comparison becomes the point of focus, which was precisely what the original graph may have lacked.
+
+**Categorical Distinction**: If more categorical information such as regions needs to be included, the bar plot will easily accommodate that using color (`fill = Group`) so that viewers can compare oil production across various regions.
+
+**Distortion-free**: A bar plot is more accurate and truthful in comparison with other plots since it avoids common pitfalls like 3D distortion or misleading scales.
+
+# Improved Geo Plot
+
+
+
+
+```{r, echo=FALSE,  message=FALSE, warning=FALSE}
+#install.packages("rnaturalearth") #package that allows access to Natural Earth map data.
+#install.packages("rnaturalearthdata") #this package provides the actual Natural Earth datasets.
+
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(ggplot2)
+library(dplyr)
+library(plotly)
+
+# Load world map data from rnaturalearth
+world <- ne_countries(scale = "medium", returnclass = "sf")
+
+# merging oil production data with world map 
+map_data <- world %>%
+  left_join(oildataset, by = c("name" = "Country"))
+
+
+# geospatial map 
+library(ggplot2)
+library(plotly)
+library(sf)        # For spatial data
+library(viridis)   # For color scales
+
+# creating a simple geospatial map for oil production
+geo_map <- ggplot(map_data) +
+  geom_sf(aes(fill = `Oil Production (Thousand B/D)`), color = "white") +  # Fill countries with oil production data
+  scale_fill_gradientn(colors = c("purple", "coral2", "darkgoldenrod2"), na.value = "gray") + 
+  labs(title = "Global Oil Production in the year 2022", fill = "Thousand B/D") +  # Adding titles and legend labels
+  theme_minimal() +  # Simple theme
+  theme(plot.title = element_text(hjust = 0.5))  # Center the title
+
+# normal graph to interactive
+interactive_geo_map <- ggplotly(geo_map)
+
+# display
+interactive_geo_map
+
+```
+
+
+
+
+
+### Why is Geospatial Map good?
+
+Adding Geographical Context another major failing of the original graph is the lack of geo context, which is addressed by a **geospatial map**.
+
+**Spatial Representation:** Conveys visually on a geospatial map where, in the world, oil production is happening. Because countries are shaded based on their relative oil production, one can readily observe regional trends, such as high production in the Middle East or North America.
+
+**Regional Comparability:** Adding a geographical dimension to this map helps the user judge the global distribution of oil production. You can tell instantly, for example, which regions are responsible for the bulk of the world's oil, something you could not get from the bar plot by itself.
+
+**Visualize the trend in a global perspective:** The map will help view the significance of regions relying on the production of oil in their various countries by showing it on a global outlook to pinpoint regional "hotspots" where the production of oil occurs.
+
+
+## Graph Insights
+
+Largest Oil-Producing Countries:
+The first place is taken by the USA where 17,770 thousand barrels of oil are produced daily.
+Saudi Arabia comes second with 12,136 thousand barrels per day.
+Russia retains the third position, with a daily production capacity of 11,202 thousand barrels of oil.
+
+Production of oil in different groups:
+Out of all the available nations, it is the non-OPEC group that produces the maximum oil, consuming a total of 37,243 thousand barrels every day.
+OPEC+'s lot and OPEC Countries team rank behind them at 27,939 and 21,827 thousand barrels per day respectively.
+OPEC countries minus producer 21,827 thousand barrels per day
+The leaders in production of of oil are Non-OPEC countries with The U.S., Saudi Arabia and Russia being the most influential suppliers globally.
