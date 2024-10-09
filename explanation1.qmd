@@ -22,56 +22,9 @@ There are many reasons why a **spiral graph** is considered a very bad choice to
 
 -   In cases of more than one time period, the spiral graph is very cluttered and normally does not permit the viewing of an individual point or of a trend over a given period.
 
-## Improved Graph: Faceted Line Plot
 
 
-```{r, echo=FALSE,  message=FALSE, warning=FALSE}
-library(ggplot2)
-library(plotly)
-source("hw.R")
-
-# Creating the faceted plot
-Dataset$Date <- as.Date(Dataset$Date) #changing date column
-
-# Filter out NAs if any
-Dataset <- Dataset %>%
-  filter(!is.na(Change_in_Deaths_Per_Day))
-
-# Redesign plot
-redesign1 <- ggplot(Dataset, aes(x = Date, y = Change_in_Deaths_Per_Day, color = Country)) +
-  geom_line(size = 1) +  # Line plot for each country
-  labs(title = "Change in Deaths Per Day for Each Country", 
-       x = "Date", 
-       y = "Change in Deaths Per Day") +
-  facet_wrap(~Country, scales = "free_y") +  # Separate graphs for each country
-  theme_minimal() +
-  theme(plot.title = element_text(hjust = 0.5),  # Title in the center
-        strip.text = element_text(size = 12),    # Facet titles size
-        axis.title = element_text(size = 12),    # Adjusting axis titles
-        legend.position = "none") +              # Removing the legend
-  scale_color_manual(values = c("aquamarine4", "darkkhaki", "burlywood4", "darkmagenta", "coral4", "purple", "cornflowerblue")) 
-
-# Convert the plot to an interactive version using plotly
-faceted_plot <- ggplotly(redesign1)
-
-# Display the interactive plot
-faceted_plot
-```
-
-
-### **Why it good** 
-
-1.   **Clarity and Simplicity**: Faceted line plots display data that are in categories, such as countries, as multiple small line graphs. This method ensures the viewer focuses on each country trend separately without those coming with plotting on a single graph. Comparability : Data for each country is clearly separated. This makes it easy to compare throughout the trend of each country since there are no overlaps. The viewer can view the death trends of each country over time and somehow compares them side by side.
-
-2.  **Trend Accuracy**: The line graph maintains continuity of time-series data, wherein trends such as increases, decreases, spikes, etc. are immediately evident and represented correctly. Unlike the spiral, it doesn't distort the data.
-
-3.  **Scalability**: Faceted plots allow custom scaling, so scales = "free_y" will ensure each country's data is scaled optimally without being biased by other countries' bigger or smaller data. This can be quite relevant for countries that have different death rates; this advice would avoid visually downplaying the smaller trends.
-
-### Why it's better than a spiral:
-
-It steers clear of the confusion and distortion such a circular shape would create, so each trend from it is clear, linear, and non-overlapping.
-
-# Redesign 2: Stacked Area Chart
+# Redesign 1: Stacked Area Chart
 
 ## Improved Graph: Stacked Area Chart
 
@@ -108,7 +61,7 @@ stacked_area_plot
 
 It provides a clear, linear representation of time, avoids visual distortion from the spiral graph, and provides an intuitive feel for how the individual contributions-countries-add up to the total. You can't get a sense for how the countries relate to each other and to the worldwide total with spirals as you can in a clean and orderly stacked area chart.
 
-# Redesign 3: Bubble Chart
+# Redesign 2: Bubble Chart
 
 ## Improved Graph: Bubble Chart
 
@@ -120,7 +73,7 @@ Dataset <- Dataset %>%
   ungroup()
 
 # Creating a bubble graph showing the cumulative deaths by country
-redesign3 <- ggplot(Dataset, aes(x = Country, y = Cumulative_Deaths_Per_Day, 
+redesign2 <- ggplot(Dataset, aes(x = Country, y = Cumulative_Deaths_Per_Day, 
                                       size = Cumulative_Deaths_Per_Day, color = Country)) +
   geom_point(alpha = 0.3) +  # Bubble chart with transparency
   scale_size(range = c(2, 10)) +  # Adjust bubble sizes
@@ -132,7 +85,7 @@ redesign3 <- ggplot(Dataset, aes(x = Country, y = Cumulative_Deaths_Per_Day,
   theme(plot.title = element_text(hjust = 0.5))
 
 # Creating interactive bubble chart using plotly
-bubble_chart <- ggplotly(redesign3)
+bubble_chart <- ggplotly(redesign2)
 
 # graph
 bubble_chart
@@ -151,7 +104,7 @@ bubble_chart
 
 ### Why it's better than a spiral : 
 
-The bubble chart shows the relative size much clearer and is much easier to interpret at a glance. While the spiral graph, due to its overlapping points and confusing trends, did not state so clearly that some countries have higher or lower cumulative deaths, the bubble chart does. This clarity in perceived size avoids ambiguity from the shape of the spiral itself.
+<!-- The bubble chart shows the relative size much clearer and is much easier to interpret at a glance. While the spiral graph, due to its overlapping points and confusing trends, did not state so clearly that some countries have higher or lower cumulative deaths, the bubble chart does. This clarity in perceived size avoids ambiguity from the shape of the spiral itself. -->
 
 
 ## Graph Insights
