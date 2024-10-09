@@ -29,3 +29,5 @@ Data Visualization is the process of depicting data and information, in the form
 1.  **Unwin, A**. (2020). Why is Data Visualization Important? What is Important in Data Visualization? *Harvard Data Science Review*. <https://doi.org/10.1162/99608f92.8ae4d525>
 2.  **Owens, R**. (n.d.). *10 Good and bad examples of data visualization · Polymer*. Polymer. h[ttps://www.polymersearch.com/blog/10-good-and-bad-examples-of-data-visualization](https://www.polymersearch.com/blog/10-good-and-bad-examples-of-data-visualization)
 3.  **Ellyatt, T**. (2024, February 13). Poor data visualisations, real life examples out there in the wild \| medium. *Medium*. [https://medium.com/\@thomas.ellyatt/bad-data-visualisation-real-life-examples-out-there-in-the-wild-eb5032329aeb](https://medium.com/@thomas.ellyatt/bad-data-visualisation-real-life-examples-out-there-in-the-wild-eb5032329aeb)
+
+
