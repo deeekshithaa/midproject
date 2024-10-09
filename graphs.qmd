@@ -1,0 +1,52 @@
+---
+title: "Covid Graphs"
+format: dashboard
+---
+
+# VISUALIZATION 1
+
+## row {.tabset}
+
+### Visualization 1
+
+#### row 1
+
+![](spiral_image.jpg){fig-align="left"}
+
+BAD GRAPH
+
+#### row 2
+
+![](redesign1_pic.jpg){width="730"}
+
+GOOD GRAPH
+
+### ![]()Visualization2
+
+#### row
+
+![](spiral_image.jpg){fig-align="left"}
+
+BAD GRAPH
+
+#### row
+
+![](redesign2_pic.jpg){width="609"}
+
+GOOD GRAPH
+
+### Visualization 3
+
+#### row
+
+![](spiral_image.jpg){fig-align="left"}
+
+BAD GRAPH
+
+#### row
+
+![](redesign3.jpg)
+
+GOOD GRAPH
+
+# 

@@ -1,0 +1,81 @@
+---
+title: "Explanation of Covid Graphs"
+---
+
+# Redesign 1: Faceted Line Plot
+
+## Bad Graph: Spiral Graph
+
+![](spiral_image.jpg)
+
+**Why the Spiral Graph is a Bad Visualization**
+
+There are many reasons why a **spiral graph** is considered a very bad choice to show complex or time-series data:
+
+1.  **Visual Complexity**: A spiral graph tends to pack a great deal of information into a compact, non-linear format. Visually interesting, perhaps, but tough to follow, particularly for data represented over time or across multiple categories. The spiral has to work against itself, where the viewer has to discover the data in some convoluted path. This is particularly problematic as a means of viewing trends or changes over time since the circular nature of the spiral distorts continuity.
+
+2.  **Lack of Comparability**: It is not easy to compare data points with a spiral graph; this is because, as you are moving outward, the distance between any two data points changes, hence showing the wrong representation of the fluctuation or trend of the data. This makes panels virtually impossible to compare across different variables or categories, since data points that fall close together may well be noncomparable. This then makes it hard to pick out which countries hold more deaths or if there is a consistent upward or downward trend.
+
+3.  **Illusory Trends**: Spiral graphs often display misleading trends due to the wrapping of data into the spiral, compressing long periods of time into very tight areas near the center and stretching more recent data farther out. It allows viewers to incorrectly assume that data points far apart in the spiral really are different when they might be close in actual value, or vice versa.
+
+4.  **Poor with Timeseries Data**: Times-series data are, by definition, linear because time itself is a natural and simple function. Spiral presentation of such data discredits the 'natural flow' and the audience has to work their brains for a while to trace a straight line in their minds.
+
+-   In cases of more than one time period, the spiral graph is very cluttered and normally does not permit the viewing of an individual point or of a trend over a given period.
+
+## Improved Graph: Faceted Line Plot
+
+![](redesign1_pic.jpg)
+
+#### Faceted Line Plots
+
+### **Why it good** 
+
+1.   **Clarity and Simplicity**: Faceted line plots display data that are in categories, such as countries, as multiple small line graphs. This method ensures the viewer focuses on each country trend separately without those coming with plotting on a single graph. Comparability : Data for each country is clearly separated. This makes it easy to compare throughout the trend of each country since there are no overlaps. The viewer can view the death trends of each country over time and somehow compares them side by side.
+
+2.  **Trend Accuracy**: The line graph maintains continuity of time-series data, wherein trends such as increases, decreases, spikes, etc. are immediately evident and represented correctly. Unlike the spiral, it doesn't distort the data.
+
+3.  **Scalability**: Faceted plots allow custom scaling, so scales = "free_y" will ensure each country's data is scaled optimally without being biased by other countries' bigger or smaller data. This can be quite relevant for countries that have different death rates; this advice would avoid visually downplaying the smaller trends.
+
+### Why it's better than a spiral:
+
+It steers clear of the confusion and distortion such a circular shape would create, so each trend from it is clear, linear, and non-overlapping.
+
+# Redesign 2: Stacked Area Chart
+
+## Improved Graph: Stacked Area Chart
+
+![](redesign2_pic.jpg)
+
+##Why it is good:
+
+**Cumulative View:** The stacked-area chart is great for showing the cumulative total of something, for example the total number of deaths contributed by each country overtime. It can show in one contribution and an overview of the trend in global deaths.
+
+**Proportional Visualization**: The countries each had an area, and the stack mapped the proportion of daily or cumulative deaths compared with others. This helps communicate not only the time trends but also how much each country contributes to the whole.
+
+**Trend Continuity**: In the spiral graph, time distorts the progression of the graph, while in the stacked area chart, time flow is linear, obvious, and on the x-axis. Due to this, the upward trend from the accumulation of global deaths was easier to read.
+
+**Aggregate Insights**: Faceted line plot is best suited for detailed, per country trends. On the other hand, the stacked area plot gives a higher level view. These will help to answer more general questions such as "Which countries contribute most to the global total?" or "What are the overall trends in global deaths?
+
+### Why it's better than a spiral:
+
+It provides a clear, linear representation of time, avoids visual distortion from the spiral graph, and provides an intuitive feel for how the individual contributions-countries-add up to the total. You can't get a sense for how the countries relate to each other and to the worldwide total with spirals as you can in a clean and orderly stacked area chart.
+
+# Redesign 3: Bubble Chart
+
+## Improved Graph: Bubble Chart
+
+![](redesign3.jpg)
+
+##Why it is good:
+
+**Representation of Magnitude:** In a bubble chart, the magnitude of cumulative deaths per country is depicted visually through the size of the bubbles. The ways people intuitively understand the comparisons of the sizes of deaths between countries are much easier to consider when viewing larger comparative bubbles.
+
+**Comparability:** Since bubbles are spatially separated, there is no overlap, one of the side effects of using spiral graphs. Comparing each country on its bubble size is very easy and viewers can instantaneously perceive which countries have been affected the most.
+
+**Clarity for High-Level Overview:** Bubble Charts are very good for high-level overviews. Since a bubble would represent each country in the graph, it can portray which countries suffer from higher deadliness. This makes it ideal to behold the global impact sans the information overload for too much detail.
+
+**Space Usage:** A good bubble chart makes better use of space than does a spiral graph. Therefore, it would be neater and less cluttered, hence capable of housing a large number of data points-countries.
+
+### Why it's better than a spiral : 
+
+The bubble chart shows the relative size much clearer and is much easier to interpret at a glance. While the spiral graph, due to its overlapping points and confusing trends, did not state so clearly that some countries have higher or lower cumulative deaths, the bubble chart does. This clarity in perceived size avoids ambiguity from the shape of the spiral itself.

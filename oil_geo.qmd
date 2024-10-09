@@ -1,11 +1,13 @@
 ---
-title: "Redesign 1"
+title: "Redesign 2"
 ---
 
 # Oil Production: Bar Plot
 
 ![Bad Graph](oil_graph.jpg)
+
 ## Why is it a bad graph?
+
 1. **Overcrowded Information**: If it was an attempt to include too much information on or within the original graph at once, such as too many countries or highly detailed categories, the viewer gets overwhelmed and has a hard time getting certain key points with just a glance.
 
 2. **Poor Visual Encoding**: The original graph could be encoding the data with an inappropriate or inefficient visualization, such as:
@@ -21,18 +23,14 @@ title: "Redesign 1"
 
 ## Improved Bar Plot
 
-![Improved Bar Plot](oil_bargraph.jpg)
+![Improved Bar Plot](oil_geograph.jpg)
 
-### Why do we consider bar as good graph? 
+##2. Why is Geospatial Map good?
 
-Bar Chart: Improve Readability and Comparability
+Adding Geographical Context another major failing of the original graph is the lack of geo context, which is addressed by a **geospatial map**.
 
-A **bar plot** strengthens this display by directly addressing the two most important issues, clarity and comparability
+**Spatial Representation:** Conveys visually on a geospatial map where, in the world, oil production is happening. Because countries are shaded based on their relative oil production, one can readily observe regional trends, such as high production in the Middle East or North America.
 
-**Understanding:** It summarizes the dataset into which country produces what amount of oil through a simple, read-friendly bar plot. Each country has its own bar, the length being directly proportional to the produced oil.
+**Regional Comparability:** Adding a geographical dimension to this map helps the user judge the global distribution of oil production. You can tell instantly, for example, which regions are responsible for the bulk of the world's oil, something you could not get from the bar plot by itself.
 
-**Sorted for Comparability:** In the following bar plot, sorting countries in a descending manner based on their oil production makes the instant comparison of which country is producing more oil. This comparison becomes the point of focus, which was precisely what the original graph may have lacked.
-
-**Categorical Distinction**: If more categorical information such as regions needs to be included, the bar plot will easily accommodate that using color (`fill = Group`) so that viewers can compare oil production across various regions.
-
-**Distortion-free**: A bar plot is more accurate and truthful in comparison with other plots since it avoids common pitfalls like 3D distortion or misleading scales.
+**Visualize the trend in a global perspective:** The map will help view the significance of regions relying on the production of oil in their various countries by showing it on a global outlook to pinpoint regional "hotspots" where the production of oil occurs.

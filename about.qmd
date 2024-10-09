@@ -1,20 +1,31 @@
 ---
-title: "About"
+title: "About This Website"
 ---
 
-# About Visualizations
+This purpose of this website is to improve data visualizations, turning messy graphs into understandable, effective and visually aesthetic graphs. The project demonstrates how even a simple, poorly constructed graph can be made better using good design principles.
 
-Visualizations help make complex data more understandable and accessible...
+## Project Goal
 
-[My LinkedIn](https://www.linkedin.com/in/yourprofile)
+-   Start with a **poor quality graph** that does not convey the data information properly.
 
-[My GitHub](https://github.com/yourprofile)
+-   Break it down and analyze what’s wrong with it.
 
-## Good vs. Bad Graphs
+-   Make **two good visual graphs** that convey the data effectively.
 
--   Bad graphs often distort or confuse the message (like the spiral COVID graph).
--   Good graphs are clear, accurate, and help in understanding the data (faceted lines, stacked charts, etc.).
+## What is Data Visualization and Why does it matter?
 
-### Enhanced Visualizations
+Data Visualization is the process of depicting data and information, in the form of visually appealing charts, graphics, and maps. They make it easier to identify factors that are not easily explained from input data analysis through charts and graphs that promotes faster decision making. Data visualization improves memory matter and gets the audience involved; it helps communicate and tell a story, and let the stakeholders get the facts and correlation glimpsed. Finally, it facilitates the decision process in organizations by laying down easily understandable and comprehensible visualizations.
 
-We enhanced two bad graphs into clear and informative visuals...
+## Tools Used
+
+-   **R Studio** for data mapping and plotting.
+
+-   **ggplot2** for creating aesthetic visualizations.
+
+-   **Quarto** for building and hosting this website.
+
+## Resources
+
+1.  **Unwin, A**. (2020). Why is Data Visualization Important? What is Important in Data Visualization? *Harvard Data Science Review*. <https://doi.org/10.1162/99608f92.8ae4d525>
+2.  **Owens, R**. (n.d.). *10 Good and bad examples of data visualization · Polymer*. Polymer. h[ttps://www.polymersearch.com/blog/10-good-and-bad-examples-of-data-visualization](https://www.polymersearch.com/blog/10-good-and-bad-examples-of-data-visualization)
+3.  **Ellyatt, T**. (2024, February 13). Poor data visualisations, real life examples out there in the wild \| medium. *Medium*. [https://medium.com/\@thomas.ellyatt/bad-data-visualisation-real-life-examples-out-there-in-the-wild-eb5032329aeb](https://medium.com/@thomas.ellyatt/bad-data-visualisation-real-life-examples-out-there-in-the-wild-eb5032329aeb)

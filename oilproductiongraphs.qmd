@@ -1,0 +1,34 @@
+---
+title: "Oil Production Graphs"
+format: dashboard
+---
+
+# VISUALIZATION 2
+
+## row {.tabset}
+
+### Visualization 1
+
+#### row 1
+
+![](oil_graph.jpg)
+
+BAD GRAPH
+
+#### row 2
+
+![](oil_bargraph.jpg)
+
+GOOD GRAPH
+
+### ![]()Visualization2
+
+#### row
+
+![](oil_graph.jpg)
+
+BAD GRAPH
+
+#### row
+
+![](oil_geograph.jpg)
