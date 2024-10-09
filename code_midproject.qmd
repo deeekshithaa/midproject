@@ -5,10 +5,15 @@ title: "Codes"
 Visualization1:
 
 library(ggplot2)
+
 library(dplyr)
+
 library(tidyr)
+
 library(plotly)
+
 source("hw.R")
+
 
 
 Redesign 1:
@@ -61,9 +66,13 @@ bubble_chart # graph
 Visualization 2:
 
 library(readxl) #to read xlsv files
+
 library(ggplot2)
+
 library(plotly)
+
 library(dplyr)
+
 source("hw.R")
 
 colnames(oildataset)
@@ -72,6 +81,7 @@ colnames(oildataset)
 Redesign 1:
 
 library(ggplot2)
+
 library(plotly)
 
 visualization1 <- ggplot(oildataset, aes(x = reorder(Country, `Oil Production (Thousand B/D)`), 
@@ -93,13 +103,18 @@ bar_chart # graph
 Redesign 2:
 
 install.packages("rnaturalearth") #package that allows access to Natural Earth map data.
+
 install.packages("rnaturalearthdata") #this package provides the actual Natural Earth datasets.
 
 
 library(rnaturalearth)
+
 library(rnaturalearthdata)
+
 library(ggplot2)
+
 library(dplyr)
+
 library(plotly)
 
 world <- ne_countries(scale = "medium", returnclass = "sf") # world map data from rnaturalearth
@@ -110,8 +125,11 @@ map_data <- world %>%
 
 
 library(ggplot2)
+
 library(plotly)
+
 library(sf)        # For spatial data
+
 library(viridis)   # For color scales
 
 
