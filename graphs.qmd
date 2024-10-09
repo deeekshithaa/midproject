@@ -15,19 +15,6 @@ format: dashboard
 
 BAD GRAPH
 
-#### row 2
-
-![](redesign1_pic.jpg){width="730"}
-
-GOOD GRAPH
-
-### ![]()Visualization2
-
-#### row
-
-![](spiral_image.jpg){fig-align="left"}
-
-BAD GRAPH
 
 #### row
 
@@ -35,7 +22,7 @@ BAD GRAPH
 
 GOOD GRAPH
 
-### Visualization 3
+### Visualization 2
 
 #### row
 
