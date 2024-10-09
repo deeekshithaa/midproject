@@ -19,3 +19,6 @@ about:
       icon: github
       href: https://github.com/mchada3
 ---
+
+## Midproject Presentation
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EELNRFiy9jA" frameborder="0" allowfullscreen></iframe>
