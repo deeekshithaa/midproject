@@ -13,6 +13,7 @@ website:
       - explanation1.qmd
       - oilproductiongraphs.qmd
       - explanation2.qmd
+      - codes.qmd
 format:
   html:
     theme: lumen
