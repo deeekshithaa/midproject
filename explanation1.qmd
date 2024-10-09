@@ -24,9 +24,40 @@ There are many reasons why a **spiral graph** is considered a very bad choice to
 
 ## Improved Graph: Faceted Line Plot
 
-![](redesign1_pic.jpg)
 
-#### Faceted Line Plots
+```{r, echo=FALSE,  message=FALSE, warning=FALSE}
+library(ggplot2)
+library(plotly)
+source("hw.R")
+
+# Creating the faceted plot
+Dataset$Date <- as.Date(Dataset$Date) #changing date column
+
+# Filter out NAs if any
+Dataset <- Dataset %>%
+  filter(!is.na(Change_in_Deaths_Per_Day))
+
+# Redesign plot
+redesign1 <- ggplot(Dataset, aes(x = Date, y = Change_in_Deaths_Per_Day, color = Country)) +
+  geom_line(size = 1) +  # Line plot for each country
+  labs(title = "Change in Deaths Per Day for Each Country", 
+       x = "Date", 
+       y = "Change in Deaths Per Day") +
+  facet_wrap(~Country, scales = "free_y") +  # Separate graphs for each country
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5),  # Title in the center
+        strip.text = element_text(size = 12),    # Facet titles size
+        axis.title = element_text(size = 12),    # Adjusting axis titles
+        legend.position = "none") +              # Removing the legend
+  scale_color_manual(values = c("aquamarine4", "darkkhaki", "burlywood4", "darkmagenta", "coral4", "purple", "cornflowerblue")) 
+
+# Convert the plot to an interactive version using plotly
+faceted_plot <- ggplotly(redesign1)
+
+# Display the interactive plot
+faceted_plot
+```
+
 
 ### **Why it good** 
 
@@ -44,7 +75,24 @@ It steers clear of the confusion and distortion such a circular shape would crea
 
 ## Improved Graph: Stacked Area Chart
 
-![](redesign2_pic.jpg)
+```{r, echo=FALSE,  message=FALSE, warning=FALSE}
+# Creating a stacked area chart which showing total deaths over time by country
+redesign2 <- ggplot(Dataset, aes(x = Date, y = Average_Deaths_Per_Day, fill = Country)) +
+  geom_area(alpha = 0.6 , size = 0.5, color = "black")  +  
+  labs(title = "Total Daily Deaths Over Time by Country (Stacked Area Chart)",
+       x = "Date", 
+       y = "Deaths Per Day",
+       fill = "Country") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5))
+
+#interactive graph using plotly
+stacked_area_plot <- ggplotly(redesign2)
+
+# graph
+stacked_area_plot
+```
+
 
 ##Why it is good:
 
@@ -64,7 +112,32 @@ It provides a clear, linear representation of time, avoids visual distortion fro
 
 ## Improved Graph: Bubble Chart
 
-![](redesign3.jpg)
+```{r, echo=FALSE,  message=FALSE, warning=FALSE}
+Dataset <- Dataset %>%
+  group_by(Country) %>%
+  arrange(Date) %>%
+  mutate(Cumulative_Deaths_Per_Day = cumsum(Average_Deaths_Per_Day)) %>%
+  ungroup()
+
+# Creating a bubble graph showing the cumulative deaths by country
+redesign3 <- ggplot(Dataset, aes(x = Country, y = Cumulative_Deaths_Per_Day, 
+                                      size = Cumulative_Deaths_Per_Day, color = Country)) +
+  geom_point(alpha = 0.3) +  # Bubble chart with transparency
+  scale_size(range = c(2, 10)) +  # Adjust bubble sizes
+  labs(title = "Deaths by Country: Cumulative Bubble Chart", 
+       x = "Country", 
+       y = "Cumulative Deaths",
+       size = "Cumulative Deaths") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5))
+
+# Creating interactive bubble chart using plotly
+bubble_chart <- ggplotly(redesign3)
+
+# graph
+bubble_chart
+```
+
 
 ##Why it is good:
 
@@ -79,3 +152,14 @@ It provides a clear, linear representation of time, avoids visual distortion fro
 ### Why it's better than a spiral : 
 
 The bubble chart shows the relative size much clearer and is much easier to interpret at a glance. While the spiral graph, due to its overlapping points and confusing trends, did not state so clearly that some countries have higher or lower cumulative deaths, the bubble chart does. This clarity in perceived size avoids ambiguity from the shape of the spiral itself.
+
+
+## Graph Insights
+Country with the highest average death rates a day: The USA topped the list with an average of 1,180 deaths per day.
+Information about countries:
+China has a range of average daily deaths from 64 - 1,154, with the average daily difference being 38 deaths.
+France, daily deaths fluctuated between 71 and 1,007 with a mean change of 71 deaths per day.
+Germany with an average of such deaths ranging from 0 to 1,173 deaths per day and more frequently about 28 deaths.
+Italy had such deaths that went as high as 1,179 deaths in a singular day and 59 deaths was seen every day.
+Spain has Deaths reached from 141 and 1,071 and average increase rates were 19 deaths per day, indicating that the number of deaths was guided.
+In particular, the present statistics indicate the difference in numbers of deaths that is as a result of the present widespread severe and fatal pandemic COVID-19 in the USA as compared to impacts of this pandemic in evidenced in other countries.
