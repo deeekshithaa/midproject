@@ -34,6 +34,10 @@ library(dplyr)
 library(tidyr)
 library(plotly)
 source("hw.R")
+library(readxl)
+Dataset <- read_excel("Dataset.xls")
+
+
 # Creating a stacked area chart which showing total deaths over time by country
 redesign2 <- ggplot(Dataset, aes(x = Date, y = Average_Deaths_Per_Day, fill = Country)) +
   geom_area(alpha = 0.6 , size = 0.5, color = "black")  +  
@@ -69,6 +73,9 @@ It provides a clear, linear representation of time, avoids visual distortion fro
 # Redesign 2: Bubble Chart
 
 ## Improved Graph: Bubble Chart
+
+library(readxl)
+Dataset <- read_excel("Dataset.xls")
 
 ```{r, echo=FALSE,  message=FALSE, warning=FALSE}
 Dataset <- Dataset %>%

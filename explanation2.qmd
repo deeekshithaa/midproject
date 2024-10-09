@@ -27,6 +27,8 @@ title: "Explanation of Oil Production Graphs"
 
 library(ggplot2)
 library(plotly)
+library(readxl)
+oildataset <- read_excel("oildataset.xlsx")
 
 # Creating a bar plot of oil production by country with custom colors
 visualization1 <- ggplot(oildataset, aes(x = reorder(Country, `Oil Production (Thousand B/D)`), 
