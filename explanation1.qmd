@@ -29,6 +29,11 @@ There are many reasons why a **spiral graph** is considered a very bad choice to
 ## Improved Graph: Stacked Area Chart
 
 ```{r, echo=FALSE,  message=FALSE, warning=FALSE}
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(plotly)
+source("hw.R")
 # Creating a stacked area chart which showing total deaths over time by country
 redesign2 <- ggplot(Dataset, aes(x = Date, y = Average_Deaths_Per_Day, fill = Country)) +
   geom_area(alpha = 0.6 , size = 0.5, color = "black")  +  
@@ -44,8 +49,8 @@ stacked_area_plot <- ggplotly(redesign2)
 
 # graph
 stacked_area_plot
-```
 
+```
 
 ##Why it is good:
 

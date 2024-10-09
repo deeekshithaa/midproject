@@ -67,35 +67,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -157,10 +128,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#filter-out-nas-if-any" id="toc-filter-out-nas-if-any" class="nav-link active" data-scroll-target="#filter-out-nas-if-any">Filter out NAs if any</a></li>
-  <li><a href="#convert-the-plot-to-an-interactive-version-using-plotly" id="toc-convert-the-plot-to-an-interactive-version-using-plotly" class="nav-link" data-scroll-target="#convert-the-plot-to-an-interactive-version-using-plotly">Convert the plot to an interactive version using plotly</a></li>
-  <li><a href="#display-the-interactive-plot" id="toc-display-the-interactive-plot" class="nav-link" data-scroll-target="#display-the-interactive-plot">Display the interactive plot</a></li>
-  <li><a href="#graph" id="toc-graph" class="nav-link" data-scroll-target="#graph">graph</a></li>
+  <li><a href="#graph" id="toc-graph" class="nav-link active" data-scroll-target="#graph">graph</a></li>
   <li><a href="#creating-interactive-bubble-chart-using-plotly" id="toc-creating-interactive-bubble-chart-using-plotly" class="nav-link" data-scroll-target="#creating-interactive-bubble-chart-using-plotly">Creating interactive bubble chart using plotly</a></li>
   <li><a href="#graph-1" id="toc-graph-1" class="nav-link" data-scroll-target="#graph-1">graph</a></li>
   <li><a href="#interactive" id="toc-interactive" class="nav-link" data-scroll-target="#interactive">interactive</a></li>
@@ -182,33 +150,18 @@ window.Quarto = {
 
 <p>Visualization1:</p>
 <p>library(ggplot2) library(dplyr) library(tidyr) library(plotly) source(“hw.R”)</p>
-<p>library(ggplot2) library(plotly)</p>
-<p>Dataset<span class="math inline">\(Date &lt;- as.Date(Dataset\)</span>Date) #changing date column</p>
-<section id="filter-out-nas-if-any" class="level1">
-<h1>Filter out NAs if any</h1>
-<p>Dataset &lt;- Dataset %&gt;% filter(!is.na(Change_in_Deaths_Per_Day))</p>
-<p>Redesign 1: redesign1 &lt;- ggplot(Dataset, aes(x = Date, y = Change_in_Deaths_Per_Day, color = Country)) + geom_line(size = 1) + # Line plot for each country labs(title = “Change in Deaths Per Day for Each Country”, x = “Date”, y = “Change in Deaths Per Day”) + facet_wrap(~Country, scales = “free_y”) + # Separate graphs for each country theme_minimal() + theme(plot.title = element_text(hjust = 0.5), # Title in the center strip.text = element_text(size = 12), # Facet titles size axis.title = element_text(size = 12), # Adjusting axis titles legend.position = “none”) + # Removing the legend scale_color_manual(values = c(“aquamarine4”, “darkkhaki”, “burlywood4”, “darkmagenta”, “coral4”, “purple”, “cornflowerblue”))</p>
-</section>
-<section id="convert-the-plot-to-an-interactive-version-using-plotly" class="level1">
-<h1>Convert the plot to an interactive version using plotly</h1>
-<p>faceted_plot &lt;- ggplotly(redesign1)</p>
-</section>
-<section id="display-the-interactive-plot" class="level1">
-<h1>Display the interactive plot</h1>
-<p>faceted_plot</p>
-<p>Redesign 2: redesign2 &lt;- ggplot(Dataset, aes(x = Date, y = Average_Deaths_Per_Day, fill = Country)) + geom_area(alpha = 0.6 , size = 0.5, color = “black”) +<br>
+<p>Redesign 1: redesign1 &lt;- ggplot(Dataset, aes(x = Date, y = Average_Deaths_Per_Day, fill = Country)) + geom_area(alpha = 0.6 , size = 0.5, color = “black”) +<br>
 labs(title = “Total Daily Deaths Over Time by Country (Stacked Area Chart)”, x = “Date”, y = “Deaths Per Day”, fill = “Country”) + theme_minimal() + theme(plot.title = element_text(hjust = 0.5))</p>
-<p>#creating interactive plot using plotly stacked_area_plot &lt;- ggplotly(redesign2)</p>
-</section>
+<p>#creating interactive plot using plotly stacked_area_plot &lt;- ggplotly(redesign1)</p>
 <section id="graph" class="level1">
 <h1>graph</h1>
 <p>stacked_area_plot</p>
-<p>Redesign 3: Dataset &lt;- Dataset %&gt;% group_by(Country) %&gt;% arrange(Date) %&gt;% mutate(Cumulative_Deaths_Per_Day = cumsum(Average_Deaths_Per_Day)) %&gt;% ungroup()</p>
-<p>redesign3 &lt;- ggplot(Dataset, aes(x = Country, y = Cumulative_Deaths_Per_Day, size = Cumulative_Deaths_Per_Day, color = Country)) + geom_point(alpha = 0.3) + # Bubble chart with transparency scale_size(range = c(2, 10)) + # Adjust bubble sizes #scale_color_manual(values = c(“China” = “lightpink”, “France” = “lightyellow”, “Germany” = “lightgreen”, “Italy”=“cyan”, “Spain” = “lightblue”, “UK” = “cornflowerblue”, “USA” = “hotpink”)) + # Custom colors for each country labs(title = “Cumulative Deaths by Country (Bubble Chart)”, x = “Country”, y = “Cumulative Deaths”, size = “Cumulative Deaths”) + theme_minimal() + theme(plot.title = element_text(hjust = 0.5))</p>
+<p>Redesign 2: Dataset &lt;- Dataset %&gt;% group_by(Country) %&gt;% arrange(Date) %&gt;% mutate(Cumulative_Deaths_Per_Day = cumsum(Average_Deaths_Per_Day)) %&gt;% ungroup()</p>
+<p>redesign2 &lt;- ggplot(Dataset, aes(x = Country, y = Cumulative_Deaths_Per_Day, size = Cumulative_Deaths_Per_Day, color = Country)) + geom_point(alpha = 0.3) + # Bubble chart with transparency scale_size(range = c(2, 10)) + # Adjust bubble sizes #scale_color_manual(values = c(“China” = “lightpink”, “France” = “lightyellow”, “Germany” = “lightgreen”, “Italy”=“cyan”, “Spain” = “lightblue”, “UK” = “cornflowerblue”, “USA” = “hotpink”)) + # Custom colors for each country labs(title = “Cumulative Deaths by Country (Bubble Chart)”, x = “Country”, y = “Cumulative Deaths”, size = “Cumulative Deaths”) + theme_minimal() + theme(plot.title = element_text(hjust = 0.5))</p>
 </section>
 <section id="creating-interactive-bubble-chart-using-plotly" class="level1">
 <h1>Creating interactive bubble chart using plotly</h1>
-<p>bubble_chart &lt;- ggplotly(redesign3)</p>
+<p>bubble_chart &lt;- ggplotly(redesign2)</p>
 </section>
 <section id="graph-1" class="level1">
 <h1>graph</h1>
