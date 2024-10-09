@@ -1,4 +1,6 @@
-#codes
+---
+title: "Codes"
+
 
 ##Visualization1:
 
@@ -119,3 +121,5 @@ interactive_geo_map <- ggplotly(geo_map) #normal graph to interactive
 
 
 interactive_geo_map # display
+
+---

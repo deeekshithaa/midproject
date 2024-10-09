@@ -9,13 +9,13 @@ about:
     - text: Medha Email
       icon: envelope
       href: mailto:medhachada30@gmail.com
-    - text: Medha GitHub
-      icon: github
-      href: https://github.com/mchada3
     - text: Deekshitha Email
       icon: envelope
       href: mailto:deekshithakalluru@gmail.com
     - text: Deekshitha GitHub
       icon: github
       href: https://github.com/deeekshithaa
+    - text: Medha GitHub
+      icon: github
+      href: https://github.com/mchada3
 ---
