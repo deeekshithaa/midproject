@@ -2,7 +2,7 @@
 title: "Codes"
 ---
 
-##Visualization1:
+Visualization1:
 
 library(ggplot2)
 library(dplyr)
@@ -11,7 +11,8 @@ library(plotly)
 source("hw.R")
 
 
-###Redesign 1:
+Redesign 1:
+
 redesign1 <- ggplot(Dataset, aes(x = Date, y = Average_Deaths_Per_Day, fill = Country)) +
   geom_area(alpha = 0.6 , size = 0.5, color = "black")  +  
   labs(title = "Total Daily Deaths Over Time by Country (Stacked Area Chart)",
@@ -27,7 +28,8 @@ stacked_area_plot # graph
 
 
 
-###Redesign 2:
+Redesign 2:
+
 Dataset <- Dataset %>%
   group_by(Country) %>%
   arrange(Date) %>%
@@ -56,7 +58,8 @@ bubble_chart # graph
 
 
 
-##Visualization 2:
+Visualization 2:
+
 library(readxl) #to read xlsv files
 library(ggplot2)
 library(plotly)
@@ -66,7 +69,8 @@ source("hw.R")
 colnames(oildataset)
 
 
-###Redesign 1:
+Redesign 1:
+
 library(ggplot2)
 library(plotly)
 
@@ -86,7 +90,8 @@ bar_chart # graph
 
 
 
-###Redesign 2:
+Redesign 2:
+
 install.packages("rnaturalearth") #package that allows access to Natural Earth map data.
 install.packages("rnaturalearthdata") #this package provides the actual Natural Earth datasets.
 
