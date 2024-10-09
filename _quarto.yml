@@ -13,7 +13,7 @@ website:
       - explanation1.qmd
       - oilproductiongraphs.qmd
       - explanation2.qmd
-      - codes.qmd
+      - code.qmd
       
 format:
   html:

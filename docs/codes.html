@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>codes – Data Visualizations</title>
+<title>Codes – Data Visualizations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -114,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./codes.html" aria-current="page"> 
-<span class="menu-text">graph</span></a>
+<span class="menu-text">Codes</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -127,91 +127,58 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#graph" id="toc-graph" class="nav-link active" data-scroll-target="#graph">graph</a></li>
-  <li><a href="#creating-interactive-bubble-chart-using-plotly" id="toc-creating-interactive-bubble-chart-using-plotly" class="nav-link" data-scroll-target="#creating-interactive-bubble-chart-using-plotly">Creating interactive bubble chart using plotly</a></li>
-  <li><a href="#graph-1" id="toc-graph-1" class="nav-link" data-scroll-target="#graph-1">graph</a></li>
-  <li><a href="#interactive" id="toc-interactive" class="nav-link" data-scroll-target="#interactive">interactive</a></li>
-  <li><a href="#graph-2" id="toc-graph-2" class="nav-link" data-scroll-target="#graph-2">graph</a></li>
-  <li><a href="#world-map-data-from-rnaturalearth" id="toc-world-map-data-from-rnaturalearth" class="nav-link" data-scroll-target="#world-map-data-from-rnaturalearth">world map data from rnaturalearth</a></li>
-  <li><a href="#merging-oil-production-data-with-world-map" id="toc-merging-oil-production-data-with-world-map" class="nav-link" data-scroll-target="#merging-oil-production-data-with-world-map">merging oil production data with world map</a></li>
-  <li><a href="#geospatial-map" id="toc-geospatial-map" class="nav-link" data-scroll-target="#geospatial-map">geospatial map</a></li>
-  <li><a href="#creating-a-simple-geospatial-map-for-oil-production" id="toc-creating-a-simple-geospatial-map-for-oil-production" class="nav-link" data-scroll-target="#creating-a-simple-geospatial-map-for-oil-production">creating a simple geospatial map for oil production</a></li>
-  <li><a href="#normal-graph-to-interactive" id="toc-normal-graph-to-interactive" class="nav-link" data-scroll-target="#normal-graph-to-interactive">normal graph to interactive</a></li>
-  <li><a href="#display" id="toc-display" class="nav-link" data-scroll-target="#display">display</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Codes</h1>
+</div>
 
 
 
-<p>Visualization1:</p>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>##Visualization1:</p>
 <p>library(ggplot2) library(dplyr) library(tidyr) library(plotly) source(“hw.R”)</p>
-<p>Redesign 1: redesign1 &lt;- ggplot(Dataset, aes(x = Date, y = Average_Deaths_Per_Day, fill = Country)) + geom_area(alpha = 0.6 , size = 0.5, color = “black”) +<br>
+<p>###Redesign 1: redesign1 &lt;- ggplot(Dataset, aes(x = Date, y = Average_Deaths_Per_Day, fill = Country)) + geom_area(alpha = 0.6 , size = 0.5, color = “black”) +<br>
 labs(title = “Total Daily Deaths Over Time by Country (Stacked Area Chart)”, x = “Date”, y = “Deaths Per Day”, fill = “Country”) + theme_minimal() + theme(plot.title = element_text(hjust = 0.5))</p>
-<p>//creating interactive plot using plotly stacked_area_plot &lt;- ggplotly(redesign1)</p>
-<section id="graph" class="level1">
-<h1>graph</h1>
-<p>stacked_area_plot</p>
-<p>Redesign 2: Dataset &lt;- Dataset %&gt;% group_by(Country) %&gt;% arrange(Date) %&gt;% mutate(Cumulative_Deaths_Per_Day = cumsum(Average_Deaths_Per_Day)) %&gt;% ungroup()</p>
+<p>stacked_area_plot &lt;- ggplotly(redesign1) #creating interactive plot using plotly</p>
+<p>stacked_area_plot # graph</p>
+<p>###Redesign 2: Dataset &lt;- Dataset %&gt;% group_by(Country) %&gt;% arrange(Date) %&gt;% mutate(Cumulative_Deaths_Per_Day = cumsum(Average_Deaths_Per_Day)) %&gt;% ungroup()</p>
 <p>redesign2 &lt;- ggplot(Dataset, aes(x = Country, y = Cumulative_Deaths_Per_Day, size = Cumulative_Deaths_Per_Day, color = Country)) + geom_point(alpha = 0.3) + # Bubble chart with transparency scale_size(range = c(2, 10)) + # Adjust bubble sizes #scale_color_manual(values = c(“China” = “lightpink”, “France” = “lightyellow”, “Germany” = “lightgreen”, “Italy”=“cyan”, “Spain” = “lightblue”, “UK” = “cornflowerblue”, “USA” = “hotpink”)) + # Custom colors for each country labs(title = “Cumulative Deaths by Country (Bubble Chart)”, x = “Country”, y = “Cumulative Deaths”, size = “Cumulative Deaths”) + theme_minimal() + theme(plot.title = element_text(hjust = 0.5))</p>
-</section>
-<section id="creating-interactive-bubble-chart-using-plotly" class="level1">
-<h1>Creating interactive bubble chart using plotly</h1>
 <p>bubble_chart &lt;- ggplotly(redesign2)</p>
-</section>
-<section id="graph-1" class="level1">
-<h1>graph</h1>
-<p>bubble_chart</p>
-<p>Visualization 2: library(readxl) #to read xlsv files library(ggplot2) library(plotly) library(dplyr) source(“hw.R”)</p>
+<p>bubble_chart # graph</p>
+<p>##Visualization 2: library(readxl) #to read xlsv files library(ggplot2) library(plotly) library(dplyr) source(“hw.R”)</p>
 <p>colnames(oildataset)</p>
-<p>Redesign 1: library(ggplot2) library(plotly)</p>
+<p>###Redesign 1: library(ggplot2) library(plotly)</p>
 <p>visualization1 &lt;- ggplot(oildataset, aes(x = reorder(Country, <code>Oil Production (Thousand B/D)</code>), y = <code>Oil Production (Thousand B/D)</code>, fill = Group)) + geom_bar(stat = “identity”) + coord_flip() + labs(title = “Oil Production by Country in 2022”, x = “Country”, y = “Production (Thousand B/D)”) + scale_fill_manual(values = c(“Non-OPEC Countries” = “darkmagenta”, “OPEC Countries” = “chocolate”, “OPEC+ Countries” = “darkolivegreen4”)) +<br>
 theme_minimal()</p>
-</section>
-<section id="interactive" class="level1">
-<h1>interactive</h1>
-<p>bar_chart &lt;- ggplotly(visualization1)</p>
-</section>
-<section id="graph-2" class="level1">
-<h1>graph</h1>
-<p>bar_chart</p>
-<p>Redesign 2: #install.packages(“rnaturalearth”) #package that allows access to Natural Earth map data. #install.packages(“rnaturalearthdata”) #this package provides the actual Natural Earth datasets.</p>
+<p>bar_chart &lt;- ggplotly(visualization1) # interactive</p>
+<p>bar_chart # graph</p>
+<p>###Redesign 2: install.packages(“rnaturalearth”) #package that allows access to Natural Earth map data. install.packages(“rnaturalearthdata”) #this package provides the actual Natural Earth datasets.</p>
 <p>library(rnaturalearth) library(rnaturalearthdata) library(ggplot2) library(dplyr) library(plotly)</p>
-</section>
-<section id="world-map-data-from-rnaturalearth" class="level1">
-<h1>world map data from rnaturalearth</h1>
-<p>world &lt;- ne_countries(scale = “medium”, returnclass = “sf”)</p>
-</section>
-<section id="merging-oil-production-data-with-world-map" class="level1">
-<h1>merging oil production data with world map</h1>
-<p>map_data &lt;- world %&gt;% left_join(oildataset, by = c(“name” = “Country”))</p>
-</section>
-<section id="geospatial-map" class="level1">
-<h1>geospatial map</h1>
+<p>world &lt;- ne_countries(scale = “medium”, returnclass = “sf”) # world map data from rnaturalearth</p>
+<p>map_data &lt;- world %&gt;% left_join(oildataset, by = c(“name” = “Country”)) # merging oil production data with world map</p>
 <p>library(ggplot2) library(plotly) library(sf) # For spatial data library(viridis) # For color scales</p>
-</section>
-<section id="creating-a-simple-geospatial-map-for-oil-production" class="level1">
-<h1>creating a simple geospatial map for oil production</h1>
-<p>geo_map &lt;- ggplot(map_data) + geom_sf(aes(fill = <code>Oil Production (Thousand B/D)</code>), color = “white”) + # Fill countries with oil production data scale_fill_gradientn(colors = c(“purple”, “coral2”, “darkgoldenrod2”), na.value = “gray”) + labs(title = “Global Oil Production in the year 2022”, fill = “Thousand B/D”) + # Adding titles and legend labels theme_minimal() + # Simple theme theme(plot.title = element_text(hjust = 0.5)) # Center the title</p>
-</section>
-<section id="normal-graph-to-interactive" class="level1">
-<h1>normal graph to interactive</h1>
-<p>interactive_geo_map &lt;- ggplotly(geo_map)</p>
-</section>
-<section id="display" class="level1">
-<h1>display</h1>
-<p>interactive_geo_map</p>
+<p>geo_map &lt;- ggplot(map_data) + # geospatial map geom_sf(aes(fill = <code>Oil Production (Thousand B/D)</code>), color = “white”) + # Fill countries with oil production data scale_fill_gradientn(colors = c(“purple”, “coral2”, “darkgoldenrod2”), na.value = “gray”) + labs(title = “Global Oil Production in the year 2022”, fill = “Thousand B/D”) + # Adding titles and legend labels theme_minimal() + # Simple theme theme(plot.title = element_text(hjust = 0.5)) # Center the title</p>
+<p>interactive_geo_map &lt;- ggplotly(geo_map) #normal graph to interactive</p>
+<p>interactive_geo_map # display</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
