@@ -14,7 +14,7 @@ website:
       - oilproductiongraphs.qmd
       - explanation2.qmd
       - midproject_codes.qmd
-      - video.qmd
+      - video_presentation.qmd
       
 format:
   html:
