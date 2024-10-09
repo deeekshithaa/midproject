@@ -113,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Explanation of Oil Production Graphs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./project_code.html" aria-current="page"> 
+    <a class="nav-link active" href="./code_midproject.html" aria-current="page"> 
 <span class="menu-text">Codes</span></a>
   </li>  
 </ul>
@@ -153,7 +153,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Visualization1:</p>
-<p>library(ggplot2) library(dplyr) library(tidyr) library(plotly) source(“hw.R”)</p>
+<p>library(ggplot2)</p>
+<p>library(dplyr)</p>
+<p>library(tidyr)</p>
+<p>library(plotly)</p>
+<p>source(“hw.R”)</p>
 <p>Redesign 1:</p>
 <p>redesign1 &lt;- ggplot(Dataset, aes(x = Date, y = Average_Deaths_Per_Day, fill = Country)) + geom_area(alpha = 0.6 , size = 0.5, color = “black”) +<br>
 labs(title = “Total Daily Deaths Over Time by Country (Stacked Area Chart)”, x = “Date”, y = “Deaths Per Day”, fill = “Country”) + theme_minimal() + theme(plot.title = element_text(hjust = 0.5))</p>
@@ -165,20 +169,33 @@ labs(title = “Total Daily Deaths Over Time by Country (Stacked Area Chart)”,
 <p>bubble_chart &lt;- ggplotly(redesign2)</p>
 <p>bubble_chart # graph</p>
 <p>Visualization 2:</p>
-<p>library(readxl) #to read xlsv files library(ggplot2) library(plotly) library(dplyr) source(“hw.R”)</p>
+<p>library(readxl) #to read xlsv files</p>
+<p>library(ggplot2)</p>
+<p>library(plotly)</p>
+<p>library(dplyr)</p>
+<p>source(“hw.R”)</p>
 <p>colnames(oildataset)</p>
 <p>Redesign 1:</p>
-<p>library(ggplot2) library(plotly)</p>
+<p>library(ggplot2)</p>
+<p>library(plotly)</p>
 <p>visualization1 &lt;- ggplot(oildataset, aes(x = reorder(Country, <code>Oil Production (Thousand B/D)</code>), y = <code>Oil Production (Thousand B/D)</code>, fill = Group)) + geom_bar(stat = “identity”) + coord_flip() + labs(title = “Oil Production by Country in 2022”, x = “Country”, y = “Production (Thousand B/D)”) + scale_fill_manual(values = c(“Non-OPEC Countries” = “darkmagenta”, “OPEC Countries” = “chocolate”, “OPEC+ Countries” = “darkolivegreen4”)) +<br>
 theme_minimal()</p>
 <p>bar_chart &lt;- ggplotly(visualization1) # interactive</p>
 <p>bar_chart # graph</p>
 <p>Redesign 2:</p>
-<p>install.packages(“rnaturalearth”) #package that allows access to Natural Earth map data. install.packages(“rnaturalearthdata”) #this package provides the actual Natural Earth datasets.</p>
-<p>library(rnaturalearth) library(rnaturalearthdata) library(ggplot2) library(dplyr) library(plotly)</p>
+<p>install.packages(“rnaturalearth”) #package that allows access to Natural Earth map data.</p>
+<p>install.packages(“rnaturalearthdata”) #this package provides the actual Natural Earth datasets.</p>
+<p>library(rnaturalearth)</p>
+<p>library(rnaturalearthdata)</p>
+<p>library(ggplot2)</p>
+<p>library(dplyr)</p>
+<p>library(plotly)</p>
 <p>world &lt;- ne_countries(scale = “medium”, returnclass = “sf”) # world map data from rnaturalearth</p>
 <p>map_data &lt;- world %&gt;% left_join(oildataset, by = c(“name” = “Country”)) # merging oil production data with world map</p>
-<p>library(ggplot2) library(plotly) library(sf) # For spatial data library(viridis) # For color scales</p>
+<p>library(ggplot2)</p>
+<p>library(plotly)</p>
+<p>library(sf) # For spatial data</p>
+<p>library(viridis) # For color scales</p>
 <p>geo_map &lt;- ggplot(map_data) + # geospatial map geom_sf(aes(fill = <code>Oil Production (Thousand B/D)</code>), color = “white”) + # Fill countries with oil production data scale_fill_gradientn(colors = c(“purple”, “coral2”, “darkgoldenrod2”), na.value = “gray”) + labs(title = “Global Oil Production in the year 2022”, fill = “Thousand B/D”) + # Adding titles and legend labels theme_minimal() + # Simple theme theme(plot.title = element_text(hjust = 0.5)) # Center the title</p>
 <p>interactive_geo_map &lt;- ggplotly(geo_map) #normal graph to interactive</p>
 <p>interactive_geo_map # display</p>
