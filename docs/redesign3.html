@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About This Website – Data Visualizations</title>
+<title>Redesign 3 – Data Visualizations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -93,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About This Website</span></a>
   </li>  
   <li class="nav-item">
@@ -128,10 +128,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#project-goal" id="toc-project-goal" class="nav-link active" data-scroll-target="#project-goal">Project Goal</a></li>
-  <li><a href="#what-is-data-visualization-and-why-does-it-matter" id="toc-what-is-data-visualization-and-why-does-it-matter" class="nav-link" data-scroll-target="#what-is-data-visualization-and-why-does-it-matter">What is Data Visualization and Why does it matter?</a></li>
-  <li><a href="#tools-used" id="toc-tools-used" class="nav-link" data-scroll-target="#tools-used">Tools Used</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#redesign-3-bubble-chart" id="toc-redesign-3-bubble-chart" class="nav-link active" data-scroll-target="#redesign-3-bubble-chart">Redesign 3: Bubble Chart</a>
+  <ul class="collapse">
+  <li><a href="#bad-graph-spiral-graph" id="toc-bad-graph-spiral-graph" class="nav-link" data-scroll-target="#bad-graph-spiral-graph">Bad Graph: Spiral Graph</a></li>
+  <li><a href="#improved-graph-bubble-chart" id="toc-improved-graph-bubble-chart" class="nav-link" data-scroll-target="#improved-graph-bubble-chart">Improved Graph: Bubble Chart</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -140,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About This Website</h1>
+<h1 class="title">Redesign 3</h1>
 </div>
 
 
@@ -157,36 +158,43 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This purpose of this website is to improve data visualizations, turning messy graphs into understandable, effective and visually aesthetic graphs. The project demonstrates how even a simple, poorly constructed graph can be made better using good design principles.</p>
-<section id="project-goal" class="level2">
-<h2 class="anchored" data-anchor-id="project-goal">Project Goal</h2>
-<ul>
-<li><p>Start with a <strong>poor quality graph</strong> that does not convey the data information properly.</p></li>
-<li><p>Break it down and analyze what’s wrong with it.</p></li>
-<li><p>Make <strong>two good visual graphs</strong> that convey the data effectively.</p></li>
-</ul>
-</section>
-<section id="what-is-data-visualization-and-why-does-it-matter" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-data-visualization-and-why-does-it-matter">What is Data Visualization and Why does it matter?</h2>
-<p>Data Visualization is the process of depicting data and information, in the form of visually appealing charts, graphics, and maps. They make it easier to identify factors that are not easily explained from input data analysis through charts and graphs that promotes faster decision making. Data visualization improves memory matter and gets the audience involved; it helps communicate and tell a story, and let the stakeholders get the facts and correlation glimpsed. Finally, it facilitates the decision process in organizations by laying down easily understandable and comprehensible visualizations.</p>
-</section>
-<section id="tools-used" class="level2">
-<h2 class="anchored" data-anchor-id="tools-used">Tools Used</h2>
-<ul>
-<li><p><strong>R Studio</strong> for data mapping and plotting.</p></li>
-<li><p><strong>ggplot2</strong> for creating aesthetic visualizations.</p></li>
-<li><p><strong>Quarto</strong> for building and hosting this website.</p></li>
-</ul>
-</section>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<section id="redesign-3-bubble-chart" class="level1">
+<h1>Redesign 3: Bubble Chart</h1>
+<section id="bad-graph-spiral-graph" class="level2">
+<h2 class="anchored" data-anchor-id="bad-graph-spiral-graph">Bad Graph: Spiral Graph</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="spiral_image.jpg" class="img-fluid figure-img"></p>
+<figcaption>Spiral Graph</figcaption>
+</figure>
+</div>
+<p><strong>Why the Spiral Graph is a Bad Visualization</strong></p>
+<p>There are many reasons why a <strong>spiral graph</strong> is considered a very bad choice to show complex or time-series data:</p>
 <ol type="1">
-<li><strong>Unwin, A</strong>. (2020). Why is Data Visualization Important? What is Important in Data Visualization? <em>Harvard Data Science Review</em>. <a href="https://doi.org/10.1162/99608f92.8ae4d525" class="uri">https://doi.org/10.1162/99608f92.8ae4d525</a></li>
-<li><strong>Owens, R</strong>. (n.d.). <em>10 Good and bad examples of data visualization · Polymer</em>. Polymer. h<a href="https://www.polymersearch.com/blog/10-good-and-bad-examples-of-data-visualization">ttps://www.polymersearch.com/blog/10-good-and-bad-examples-of-data-visualization</a></li>
-<li><strong>Ellyatt, T</strong>. (2024, February 13). Poor data visualisations, real life examples out there in the wild | medium. <em>Medium</em>. <a href="https://medium.com/@thomas.ellyatt/bad-data-visualisation-real-life-examples-out-there-in-the-wild-eb5032329aeb">https://medium.com/@thomas.ellyatt/bad-data-visualisation-real-life-examples-out-there-in-the-wild-eb5032329aeb</a></li>
+<li><p><strong>Visual Complexity</strong>: A spiral graph tends to pack a great deal of information into a compact, non-linear format. Visually interesting, perhaps, but tough to follow, particularly for data represented over time or across multiple categories. The spiral has to work against itself, where the viewer has to discover the data in some convoluted path. This is particularly problematic as a means of viewing trends or changes over time since the circular nature of the spiral distorts continuity.</p></li>
+<li><p><strong>Lack of Comparability</strong>: It is not easy to compare data points with a spiral graph; this is because, as you are moving outward, the distance between any two data points changes, hence showing the wrong representation of the fluctuation or trend of the data. This makes panels virtually impossible to compare across different variables or categories, since data points that fall close together may well be noncomparable. This then makes it hard to pick out which countries hold more deaths or if there is a consistent upward or downward trend.</p></li>
+<li><p><strong>Illusory Trends</strong>: Spiral graphs often display misleading trends due to the wrapping of data into the spiral, compressing long periods of time into very tight areas near the center and stretching more recent data farther out. It allows viewers to incorrectly assume that data points far apart in the spiral really are different when they might be close in actual value, or vice versa.</p></li>
+<li><p><strong>Poor with Timeseries Data</strong>: Times-series data are, by definition, linear because time itself is a natural and simple function. Spiral presentation of such data discredits the ‘natural flow’ and the audience has to work their brains for a while to trace a straight line in their minds.</p></li>
 </ol>
+<p>. In cases of more than one time period, the spiral graph is very cluttered and normally does not permit the viewing of an individual point or of a trend over a given period.</p>
+</section>
+<section id="improved-graph-bubble-chart" class="level2">
+<h2 class="anchored" data-anchor-id="improved-graph-bubble-chart">Improved Graph: Bubble Chart</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="redesign3.jpg" class="img-fluid figure-img"></p>
+<figcaption>Bubble Chart</figcaption>
+</figure>
+</div>
+<p>#Why it is good:</p>
+<p><strong>Representation of Magnitude:</strong> In a bubble chart, the magnitude of cumulative deaths per country is depicted visually through the size of the bubbles. The ways people intuitively understand the comparisons of the sizes of deaths between countries are much easier to consider when viewing larger comparative bubbles.</p>
+<p><strong>Comparability:</strong> Since bubbles are spatially separated, there is no overlap, one of the side effects of using spiral graphs. Comparing each country on its bubble size is very easy and viewers can instantaneously perceive which countries have been affected the most.</p>
+<p><strong>Clarity for High-Level Overview:</strong> Bubble Charts are very good for high-level overviews. Since a bubble would represent each country in the graph, it can portray which countries suffer from higher deadliness. This makes it ideal to behold the global impact sans the information overload for too much detail.</p>
+<p><strong>Space Usage:</strong> A good bubble chart makes better use of space than does a spiral graph. Therefore, it would be neater and less cluttered, hence capable of housing a large number of data points-countries.</p>
+<p>###Why it’s better than a spiral : - The bubble chart shows the relative size much clearer and is much easier to interpret at a glance. While the spiral graph, due to its overlapping points and confusing trends, did not state so clearly that some countries have higher or lower cumulative deaths, the bubble chart does. This clarity in perceived size avoids ambiguity from the shape of the spiral itself.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

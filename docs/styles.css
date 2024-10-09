@@ -1,1 +1,18 @@
-/* css styles */
+.graph-comparison {
+    display: flex;
+    justify-content: space-between; /* Adjusts spacing between the graphs */
+    align-items: center;            /* Vertically aligns the graphs */
+    gap: 20px;                      /* Space between graphs */
+}
+
+.graph-comparison div {
+    flex: 1;                        /* Ensures both graphs take up equal width */
+    padding: 10px;
+}
+
+.graph-comparison img {
+    max-width: 100%;                /* Ensures the images are responsive */
+    height: auto;
+    border: 1px solid #ccc;         /* Optional border around the graphs */
+}
+

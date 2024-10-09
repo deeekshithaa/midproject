@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About This Website – Data Visualizations</title>
+<title>Explanation of Oil Production Graphs – Data Visualizations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -93,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About This Website</span></a>
   </li>  
   <li class="nav-item">
@@ -109,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Oil Production Graphs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./explanation2.html"> 
+    <a class="nav-link active" href="./explanation2.html" aria-current="page"> 
 <span class="menu-text">Explanation of Oil Production Graphs</span></a>
   </li>  
 </ul>
@@ -128,10 +128,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#project-goal" id="toc-project-goal" class="nav-link active" data-scroll-target="#project-goal">Project Goal</a></li>
-  <li><a href="#what-is-data-visualization-and-why-does-it-matter" id="toc-what-is-data-visualization-and-why-does-it-matter" class="nav-link" data-scroll-target="#what-is-data-visualization-and-why-does-it-matter">What is Data Visualization and Why does it matter?</a></li>
-  <li><a href="#tools-used" id="toc-tools-used" class="nav-link" data-scroll-target="#tools-used">Tools Used</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#why-is-it-a-bad-graph" id="toc-why-is-it-a-bad-graph" class="nav-link active" data-scroll-target="#why-is-it-a-bad-graph">Why is it a bad graph?</a></li>
+  <li><a href="#oil-production-bar-plot" id="toc-oil-production-bar-plot" class="nav-link" data-scroll-target="#oil-production-bar-plot">Oil Production: Bar Plot</a>
+  <ul class="collapse">
+  <li><a href="#improved-bar-plot" id="toc-improved-bar-plot" class="nav-link" data-scroll-target="#improved-bar-plot">Improved Bar Plot</a>
+  <ul class="collapse">
+  <li><a href="#why-do-we-consider-bar-as-good-graph" id="toc-why-do-we-consider-bar-as-good-graph" class="nav-link" data-scroll-target="#why-do-we-consider-bar-as-good-graph">Why do we consider bar as good graph?</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#improved-geo-plot" id="toc-improved-geo-plot" class="nav-link" data-scroll-target="#improved-geo-plot">Improved Geo Plot</a>
+  <ul class="collapse">
+  <li><a href="#why-is-geospatial-map-good" id="toc-why-is-geospatial-map-good" class="nav-link" data-scroll-target="#why-is-geospatial-map-good">Why is Geospatial Map good?</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -140,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About This Website</h1>
+<h1 class="title">Explanation of Oil Production Graphs</h1>
 </div>
 
 
@@ -157,36 +165,46 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This purpose of this website is to improve data visualizations, turning messy graphs into understandable, effective and visually aesthetic graphs. The project demonstrates how even a simple, poorly constructed graph can be made better using good design principles.</p>
-<section id="project-goal" class="level2">
-<h2 class="anchored" data-anchor-id="project-goal">Project Goal</h2>
-<ul>
-<li><p>Start with a <strong>poor quality graph</strong> that does not convey the data information properly.</p></li>
-<li><p>Break it down and analyze what’s wrong with it.</p></li>
-<li><p>Make <strong>two good visual graphs</strong> that convey the data effectively.</p></li>
-</ul>
-</section>
-<section id="what-is-data-visualization-and-why-does-it-matter" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-data-visualization-and-why-does-it-matter">What is Data Visualization and Why does it matter?</h2>
-<p>Data Visualization is the process of depicting data and information, in the form of visually appealing charts, graphics, and maps. They make it easier to identify factors that are not easily explained from input data analysis through charts and graphs that promotes faster decision making. Data visualization improves memory matter and gets the audience involved; it helps communicate and tell a story, and let the stakeholders get the facts and correlation glimpsed. Finally, it facilitates the decision process in organizations by laying down easily understandable and comprehensible visualizations.</p>
-</section>
-<section id="tools-used" class="level2">
-<h2 class="anchored" data-anchor-id="tools-used">Tools Used</h2>
-<ul>
-<li><p><strong>R Studio</strong> for data mapping and plotting.</p></li>
-<li><p><strong>ggplot2</strong> for creating aesthetic visualizations.</p></li>
-<li><p><strong>Quarto</strong> for building and hosting this website.</p></li>
-</ul>
-</section>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<p><img src="oil_graph.jpg" class="img-fluid"></p>
+<section id="why-is-it-a-bad-graph" class="level3">
+<h3 class="anchored" data-anchor-id="why-is-it-a-bad-graph">Why is it a bad graph?</h3>
 <ol type="1">
-<li><strong>Unwin, A</strong>. (2020). Why is Data Visualization Important? What is Important in Data Visualization? <em>Harvard Data Science Review</em>. <a href="https://doi.org/10.1162/99608f92.8ae4d525" class="uri">https://doi.org/10.1162/99608f92.8ae4d525</a></li>
-<li><strong>Owens, R</strong>. (n.d.). <em>10 Good and bad examples of data visualization · Polymer</em>. Polymer. h<a href="https://www.polymersearch.com/blog/10-good-and-bad-examples-of-data-visualization">ttps://www.polymersearch.com/blog/10-good-and-bad-examples-of-data-visualization</a></li>
-<li><strong>Ellyatt, T</strong>. (2024, February 13). Poor data visualisations, real life examples out there in the wild | medium. <em>Medium</em>. <a href="https://medium.com/@thomas.ellyatt/bad-data-visualisation-real-life-examples-out-there-in-the-wild-eb5032329aeb">https://medium.com/@thomas.ellyatt/bad-data-visualisation-real-life-examples-out-there-in-the-wild-eb5032329aeb</a></li>
+<li><p><strong>Overcrowded Information</strong>: If it was an attempt to include too much information on or within the original graph at once, such as too many countries or highly detailed categories, the viewer gets overwhelmed and has a hard time getting certain key points with just a glance.</p></li>
+<li><p><strong>Poor Visual Encoding</strong>: The original graph could be encoding the data with an inappropriate or inefficient visualization, such as: Displaying 3D charts, usually distorting the true value comparisons.</p>
+<p>Inappropriate use of color scale, through which the variation of values cannot be perceived.</p>
+<p>This would include a failure to arrange data in a logical order that would allow for easy comparison between countries regarding oil production.</p></li>
+<li><p><strong>Lack of Focus on Comparison</strong>: It is not clear from the graph how the countries compare in their oil production, which is likely the most important insight to be derived from the data. If the graph isn’t sorted or uses inconsistent scales, the viewer can’t readily tell which countries produce the most oil.</p></li>
+<li><p><strong>Geographical Blindness</strong>: A chart that does not adopt geographical context because of its original nature does not present oil production on the geographic perspective. Oil production is highly related to geography, thus a lack of geographical perspective limits the insight a viewer gains from the data.</p></li>
 </ol>
+</section>
+<section id="oil-production-bar-plot" class="level1">
+<h1>Oil Production: Bar Plot</h1>
+<section id="improved-bar-plot" class="level2">
+<h2 class="anchored" data-anchor-id="improved-bar-plot">Improved Bar Plot</h2>
+<p><img src="oil_bargraph.jpg" class="img-fluid"></p>
+<section id="why-do-we-consider-bar-as-good-graph" class="level3">
+<h3 class="anchored" data-anchor-id="why-do-we-consider-bar-as-good-graph">Why do we consider bar as good graph?</h3>
+<p><strong>Bar Chart:</strong> Improve Readability and Comparability</p>
+<p>A <strong>bar plot</strong> strengthens this display by directly addressing the two most important issues, clarity and comparability</p>
+<p><strong>Understanding:</strong> It summarizes the dataset into which country produces what amount of oil through a simple, read-friendly bar plot. Each country has its own bar, the length being directly proportional to the produced oil.</p>
+<p><strong>Sorted for Comparability:</strong> In the following bar plot, sorting countries in a descending manner based on their oil production makes the instant comparison of which country is producing more oil. This comparison becomes the point of focus, which was precisely what the original graph may have lacked.</p>
+<p><strong>Categorical Distinction</strong>: If more categorical information such as regions needs to be included, the bar plot will easily accommodate that using color (<code>fill = Group</code>) so that viewers can compare oil production across various regions.</p>
+<p><strong>Distortion-free</strong>: A bar plot is more accurate and truthful in comparison with other plots since it avoids common pitfalls like 3D distortion or misleading scales.</p>
+</section>
+</section>
+</section>
+<section id="improved-geo-plot" class="level1">
+<h1>Improved Geo Plot</h1>
+<p><img src="oil_geograph.jpg" class="img-fluid"></p>
+<section id="why-is-geospatial-map-good" class="level3">
+<h3 class="anchored" data-anchor-id="why-is-geospatial-map-good">Why is Geospatial Map good?</h3>
+<p>Adding Geographical Context another major failing of the original graph is the lack of geo context, which is addressed by a <strong>geospatial map</strong>.</p>
+<p><strong>Spatial Representation:</strong> Conveys visually on a geospatial map where, in the world, oil production is happening. Because countries are shaded based on their relative oil production, one can readily observe regional trends, such as high production in the Middle East or North America.</p>
+<p><strong>Regional Comparability:</strong> Adding a geographical dimension to this map helps the user judge the global distribution of oil production. You can tell instantly, for example, which regions are responsible for the bulk of the world’s oil, something you could not get from the bar plot by itself.</p>
+<p><strong>Visualize the trend in a global perspective:</strong> The map will help view the significance of regions relying on the production of oil in their various countries by showing it on a global outlook to pinpoint regional “hotspots” where the production of oil occurs.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

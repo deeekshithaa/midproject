@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>redesign1 – Data Visualizations</title>
+<title>Redesign 1 – Data Visualizations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -94,34 +94,24 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
+<span class="menu-text">About This Website</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-visualizations" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Visualizations</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-visualizations">    
-        <li>
-    <a class="dropdown-item" href="./redesign1.html">
- <span class="dropdown-text">Redesign 1</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./graphs.html"> 
+<span class="menu-text">Covid Graphs</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="./demo.html">
- <span class="dropdown-text">Demo</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./explanation1.html"> 
+<span class="menu-text">Explanation of Covid Graphs</span></a>
   </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-oil-production" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Oil Production</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-oil-production">    
-        <li>
-    <a class="dropdown-item" href="./oil_bar.html">
- <span class="dropdown-text">Bar Plot</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./oilproductiongraphs.html"> 
+<span class="menu-text">Oil Production Graphs</span></a>
   </li>  
-    </ul>
-  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./explanation2.html"> 
+<span class="menu-text">Explanation of Oil Production Graphs</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -133,13 +123,25 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#redesign-1-faceted-line-plot" id="toc-redesign-1-faceted-line-plot" class="nav-link active" data-scroll-target="#redesign-1-faceted-line-plot">Redesign 1: Faceted Line Plot</a>
+  <ul class="collapse">
+  <li><a href="#bad-graph-spiral-graph" id="toc-bad-graph-spiral-graph" class="nav-link" data-scroll-target="#bad-graph-spiral-graph">Bad Graph: Spiral Graph</a></li>
+  <li><a href="#improved-graph-faceted-line-plot" id="toc-improved-graph-faceted-line-plot" class="nav-link" data-scroll-target="#improved-graph-faceted-line-plot">Improved Graph: Faceted Line Plot</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">redesign1</h1>
+<h1 class="title">Redesign 1</h1>
 </div>
 
 
@@ -160,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
 <h1>Redesign 1: Faceted Line Plot</h1>
 <section id="bad-graph-spiral-graph" class="level2">
 <h2 class="anchored" data-anchor-id="bad-graph-spiral-graph">Bad Graph: Spiral Graph</h2>
-<p><img src="spiral_image.jpg" class="img-fluid" alt="Spiral Graph"> ![<strong>Why the Spiral Graph is a Bad Visualization</strong></p>
+<p><img src="spiral_image.jpg" class="img-fluid" alt="Spiral Graph"> <strong>Why the Spiral Graph is a Bad Visualization</strong></p>
 <p>There are many reasons why a <strong>spiral graph</strong> is considered a very bad choice to show complex or time-series data:</p>
 <ol type="1">
 <li><p><strong>Visual Complexity</strong>: A spiral graph tends to pack a great deal of information into a compact, non-linear format. Visually interesting, perhaps, but tough to follow, particularly for data represented over time or across multiple categories. The spiral has to work against itself, where the viewer has to discover the data in some convoluted path. This is particularly problematic as a means of viewing trends or changes over time since the circular nature of the spiral distorts continuity.</p></li>
@@ -174,9 +176,13 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="improved-graph-faceted-line-plot" class="level2">
 <h2 class="anchored" data-anchor-id="improved-graph-faceted-line-plot">Improved Graph: Faceted Line Plot</h2>
-<p><img src="redesign1_pic.jpg" class="img-fluid" alt="Faceted Line Plot"> 1. <strong>Faceted Line Plots</strong></p>
-<p><strong>Why it good</strong> <em>Clarity and Simplicity</em>: Faceted line plots display data that are in categories, such as countries, as multiple small line graphs. This method ensures the viewer focuses on each country trend separately without those coming with plotting on a single graph. Comparability : Data for each country is clearly separated. This makes it easy to compare throughout the trend of each country since there are no overlaps. The viewer can view the death trends of each country over time and somehow compares them side by side. <em>Trend Accuracy</em>: The line graph maintains continuity of time-series data, wherein trends such as increases, decreases, spikes, etc. are immediately evident and represented correctly. Unlike the spiral, it doesn’t distort the data. <em>Scalability</em>: Faceted plots allow custom scaling, so scales = “free_y” will ensure each country’s data is scaled optimally without being biased by other countries’ bigger or smaller data. This can be quite relevant for countries that have different death rates; this advice would avoid visually downplaying the smaller trends.</p>
-<p>###Why it’s better than a spiral It steers clear of the confusion and distortion such a circular shape would create, so each trend from it is clear, linear, and non-overlapping.]</p>
+<p><img src="redesign1_pic.jpg" class="img-fluid" alt="Faceted Line Plot"> ##Faceted Line Plots**</p>
+<p><strong>Why it good</strong> 1. <strong>Clarity and Simplicity</strong>: Faceted line plots display data that are in categories, such as countries, as multiple small line graphs. This method ensures the viewer focuses on each country trend separately without those coming with plotting on a single graph. Comparability : Data for each country is clearly separated. This makes it easy to compare throughout the trend of each country since there are no overlaps. The viewer can view the death trends of each country over time and somehow compares them side by side.</p>
+<ol start="2" type="1">
+<li><p><strong>Trend Accuracy</strong>: The line graph maintains continuity of time-series data, wherein trends such as increases, decreases, spikes, etc. are immediately evident and represented correctly. Unlike the spiral, it doesn’t distort the data.</p></li>
+<li><p><strong>Scalability</strong>: Faceted plots allow custom scaling, so scales = “free_y” will ensure each country’s data is scaled optimally without being biased by other countries’ bigger or smaller data. This can be quite relevant for countries that have different death rates; this advice would avoid visually downplaying the smaller trends.</p></li>
+</ol>
+<p>###Why it’s better than a spiral It steers clear of the confusion and distortion such a circular shape would create, so each trend from it is clear, linear, and non-overlapping.</p>
 
 
 </section>

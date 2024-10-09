@@ -48,5 +48,3 @@ BAD GRAPH
 ![](redesign3.jpg)
 
 GOOD GRAPH
-
-# 

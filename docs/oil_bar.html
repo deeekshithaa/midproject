@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>oil_bar.qmd – Data Visualizations</title>
+<title>Redesign 1 – Data Visualizations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -94,34 +94,24 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
+<span class="menu-text">About This Website</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-visualizations" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Visualizations</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-visualizations">    
-        <li>
-    <a class="dropdown-item" href="./redesign1.html">
- <span class="dropdown-text">Redesign 1</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./graphs.html"> 
+<span class="menu-text">Covid Graphs</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="./demo.html">
- <span class="dropdown-text">Demo</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./explanation1.html"> 
+<span class="menu-text">Explanation of Covid Graphs</span></a>
   </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-oil-production" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Oil Production</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-oil-production">    
-        <li>
-    <a class="dropdown-item" href="./oil_bar.html">
- <span class="dropdown-text">Bar Plot</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./oilproductiongraphs.html"> 
+<span class="menu-text">Oil Production Graphs</span></a>
   </li>  
-    </ul>
-  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./explanation2.html"> 
+<span class="menu-text">Explanation of Oil Production Graphs</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -133,13 +123,27 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#oil-production-bar-plot" id="toc-oil-production-bar-plot" class="nav-link active" data-scroll-target="#oil-production-bar-plot">Oil Production: Bar Plot</a>
+  <ul class="collapse">
+  <li><a href="#improved-bar-plot" id="toc-improved-bar-plot" class="nav-link" data-scroll-target="#improved-bar-plot">Improved Bar Plot</a>
+  <ul class="collapse">
+  <li><a href="#why-do-we-consider-bar-as-good-graph" id="toc-why-do-we-consider-bar-as-good-graph" class="nav-link" data-scroll-target="#why-do-we-consider-bar-as-good-graph">Why do we consider bar as good graph?</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">oil_bar.qmd</h1>
+<h1 class="title">Redesign 1</h1>
 </div>
 
 
@@ -158,23 +162,30 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="oil-production-bar-plot" class="level1">
 <h1>Oil Production: Bar Plot</h1>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="path_to_bad_oil_bar_image.png" class="img-fluid figure-img"></p>
-<figcaption>Bad Bar Plot</figcaption>
-</figure>
-</div>
+<p><img src="oil_graph.jpg" class="img-fluid" alt="Bad Graph"> ## Why is it a bad graph? 1. <strong>Overcrowded Information</strong>: If it was an attempt to include too much information on or within the original graph at once, such as too many countries or highly detailed categories, the viewer gets overwhelmed and has a hard time getting certain key points with just a glance.</p>
+<ol start="2" type="1">
+<li><p><strong>Poor Visual Encoding</strong>: The original graph could be encoding the data with an inappropriate or inefficient visualization, such as: Displaying 3D charts, usually distorting the true value comparisons.</p>
+<p>Inappropriate use of color scale, through which the variation of values cannot be perceived.</p>
+<p>This would include a failure to arrange data in a logical order that would allow for easy comparison between countries regarding oil production.</p></li>
+<li><p><strong>Lack of Focus on Comparison</strong>: It is not clear from the graph how the countries compare in their oil production, which is likely the most important insight to be derived from the data. If the graph isn’t sorted or uses inconsistent scales, the viewer can’t readily tell which countries produce the most oil.</p></li>
+<li><p><strong>Geographical Blindness</strong>: A chart that does not adopt geographical context because of its original nature does not present oil production on the geographic perspective. Oil production is highly related to geography, thus a lack of geographical perspective limits the insight a viewer gains from the data.</p></li>
+</ol>
 <section id="improved-bar-plot" class="level2">
 <h2 class="anchored" data-anchor-id="improved-bar-plot">Improved Bar Plot</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="path_to_good_oil_bar_image.png" class="img-fluid figure-img"></p>
+<p><img src="oil_bargraph.jpg" class="img-fluid figure-img"></p>
 <figcaption>Improved Bar Plot</figcaption>
 </figure>
 </div>
-<section id="why-the-change" class="level3">
-<h3 class="anchored" data-anchor-id="why-the-change">Why the Change</h3>
-<p>The original plot made it difficult to compare countries’ oil production…</p>
+<section id="why-do-we-consider-bar-as-good-graph" class="level3">
+<h3 class="anchored" data-anchor-id="why-do-we-consider-bar-as-good-graph">Why do we consider bar as good graph?</h3>
+<p>Bar Chart: Improve Readability and Comparability</p>
+<p>A <strong>bar plot</strong> strengthens this display by directly addressing the two most important issues, clarity and comparability</p>
+<p><strong>Understanding:</strong> It summarizes the dataset into which country produces what amount of oil through a simple, read-friendly bar plot. Each country has its own bar, the length being directly proportional to the produced oil.</p>
+<p><strong>Sorted for Comparability:</strong> In the following bar plot, sorting countries in a descending manner based on their oil production makes the instant comparison of which country is producing more oil. This comparison becomes the point of focus, which was precisely what the original graph may have lacked.</p>
+<p><strong>Categorical Distinction</strong>: If more categorical information such as regions needs to be included, the bar plot will easily accommodate that using color (<code>fill = Group</code>) so that viewers can compare oil production across various regions.</p>
+<p><strong>Distortion-free</strong>: A bar plot is more accurate and truthful in comparison with other plots since it avoids common pitfalls like 3D distortion or misleading scales.</p>
 
 
 </section>
